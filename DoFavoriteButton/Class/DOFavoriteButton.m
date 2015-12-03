@@ -24,15 +24,6 @@
     
 }
 
-//- (instancetype)init {
-//    self = [super init];
-//    if (self) {
-//        _circleColor = [UIColor colorWithRed:255.0 / 255.0 green:172.0 / 255.0 blue:51.0 / 255.0 alpha:1.0];
-//        _lineColor = [UIColor colorWithRed:250.0 / 255.0 green:120.0 / 255.0 blue:68.0 / 255.0 alpha:1.0];
-//    }
-//    return self;
-//}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -176,15 +167,15 @@
     
     circleMaskTransform.duration = 0.333; // 0.0333 * 10
     circleMaskTransform.values = @[
-                                  [NSValue valueWithCATransform3D:CATransform3DIdentity],                                                              //  0/10
-                                  [NSValue valueWithCATransform3D:CATransform3DIdentity],                                                              //  2/10
-                                  [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 1.25,  imageFrame.size.height * 1.25,  1.0)], //  3/10
+                                  [NSValue valueWithCATransform3D:CATransform3DIdentity],                                                                       //  0/10
+                                  [NSValue valueWithCATransform3D:CATransform3DIdentity],                                                                       //  2/10
+                                  [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 1.25,  imageFrame.size.height * 1.25,  1.0)],  //  3/10
                                   [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 2.688,  imageFrame.size.height * 2.688,  1.0)],//  4/10
                                   [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 3.923,  imageFrame.size.height * 3.923,  1.0)],//  5/10
                                   [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 4.375,  imageFrame.size.height * 4.375,  1.0)],//  6/10
                                   [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 4.731,  imageFrame.size.height * 4.731,  1.0)],//  7/10
-                                  [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 5.0,  imageFrame.size.height * 5.0,  1.0)],//  9/10
-                                  [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 5.0,  imageFrame.size.height * 5.0,  1.0)]// 10/10
+                                  [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 5.0,  imageFrame.size.height * 5.0,  1.0)],    //  9/10
+                                  [NSValue valueWithCATransform3D:CATransform3DMakeScale(imageFrame.size.width * 5.0,  imageFrame.size.height * 5.0,  1.0)]     // 10/10
                                   ];
     circleMaskTransform.keyTimes = @[
                                     @0.0,    //  0/10
@@ -343,12 +334,12 @@
 - (void)setDuration:(NSTimeInterval )duration {
     _duration = duration;
     
-    circleTransform.duration = 0.333 * _duration; // 0.0333 * 10
-    circleMaskTransform.duration = 0.333 * _duration; // 0.0333 * 10
-    lineStrokeStart.duration = 0.6 * _duration; //0.0333 * 18
-    lineStrokeEnd.duration = 0.6 * _duration; //0.0333 * 18
-    lineOpacity.duration = 1.0 * _duration; //0.0333 * 30
-    imageTransform.duration = 1.0 * _duration; //0.0333 * 30
+    circleTransform.duration = 0.333 * _duration;       // 0.0333 * 10
+    circleMaskTransform.duration = 0.333 * _duration;   // 0.0333 * 10
+    lineStrokeStart.duration = 0.6 * _duration;         //0.0333 * 18
+    lineStrokeEnd.duration = 0.6 * _duration;           //0.0333 * 18
+    lineOpacity.duration = 1.0 * _duration;             //0.0333 * 30
+    imageTransform.duration = 1.0 * _duration;          //0.0333 * 30
 }
 
 - (void)select {
